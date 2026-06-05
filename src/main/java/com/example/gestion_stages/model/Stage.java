@@ -7,31 +7,31 @@ import java.time.LocalDate;
 
 @Entity
 @Data
-class Stage {
+public class Stage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    String sujet;
+    private String sujet;
 
-    LocalDate dateDebut;
-    LocalDate dateFin;
-
-    @Column(columnDefinition = "TEXT")
-    String description;
+    private LocalDate dateDebut;
+    private LocalDate dateFin;
 
     @Column(columnDefinition = "TEXT")
-    String objectifs;
+    private String description;
 
     @Column(columnDefinition = "TEXT")
-    String solution;
+    private String objectifs;
 
     @Column(columnDefinition = "TEXT")
-    String demarche;
+    private String solution;
 
-    String outils;
+    @Column(columnDefinition = "TEXT")
+    private String demarche;
 
-    String status; // ACTIVE | COMPLETED | CANCELLED
+    private String outils;
+
+    private String status =  "UNASSIGNED"; // UNASSIGNED | ACTIVE | COMPLETED | CANCELLED
 
     @ManyToOne
     private Etudiant etudiant;
