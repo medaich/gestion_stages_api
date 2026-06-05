@@ -1,11 +1,12 @@
 package com.example.gestion_stages.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.util.List;
 
 @Entity
+@Data
 public class EncadrantAcademique {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,4 +17,7 @@ public class EncadrantAcademique {
 
     private String departement;
     private String etablissement;
+
+    @OneToMany
+    private List<Stage> stages;
 }

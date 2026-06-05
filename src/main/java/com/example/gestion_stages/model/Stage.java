@@ -1,10 +1,12 @@
 package com.example.gestion_stages.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDate;
 
 @Entity
+@Data
 class Stage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,4 +30,15 @@ class Stage {
     String demarche;
 
     String outils;
+
+    String status; // ACTIVE | COMPLETED | CANCELLED
+
+    @ManyToOne
+    private Etudiant etudiant;
+
+    @ManyToOne
+    private Entreprise entreprise;
+
+    @ManyToOne
+    private EncadrantAcademique encadrantAcademique;
 }
