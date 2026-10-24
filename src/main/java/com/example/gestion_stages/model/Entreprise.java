@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Data
-class Entreprise {
+public class Entreprise {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;

@@ -17,7 +17,7 @@ public class Etudiant {
     private String nom;
     private String prenom;
     private String email;
-    private int tel;
+    private String tel;
 
     @OneToMany
     private List<Stage> stages; // we can only have one active stage per student; However, we can have multiple abandoned stages
